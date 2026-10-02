@@ -1,0 +1,179 @@
+{
+  "id": "DH-IND-0003",
+  "name": "TERRACOTTA HORSE OF BANKURA",
+  "artifact_type": "Votive Folk Earthenware",
+  "material": "Local Alluvial River Clay (Fired Terracotta)",
+  "craft_technique": "Hollow wheel-thrown components assembled by hand with incised clay applique",
+  "region": "West Bengal",
+  "community": "Kumbhakar (Potter) Guild of Panchmura",
+  "approximate_period": "Mid 20th Century / Traditional Folk Lineage",
+  "traditional_use": "Votive offering placed under sacred Banyan groves for Dharmathakur and local protective village deities to invoke blessings and fulfillment of vows.",
+  "cultural_significance": "Globally recognized emblem of Indian rural folk aesthetic; characterized by monumental erect ears, extended neck, and symmetrical architectural dignity.",
+  "associated_practice": "Gram-devata worship ceremonies and annual Rarh region harvest melas.",
+  "documentation_date": "2026-09-18",
+  "contributor": "Sudhir Kumbhakar, Panchmura",
+  "scan_status": "COMPLETED",
+  "3d_status": "COMPLETED",
+  "3d_model_url": "/static/assets/models/terracotta_horse.glb",
+  "thumbnail_url": "/static/assets/images/view_front.jpg",
+  "verification_status": "COMMUNITY-PROVIDED",
+  "verification_badge": "COMMUNITY-PROVIDED",
+  "verification_level": 2,
+  "scale_reference": "DETECTED",
+  "scale_marker_id": 42,
+  "scale_status": "SCALED",
+  "dimensions": {
+    "height": 27.0,
+    "width": 11.5,
+    "depth": 15.2,
+    "unit": "cm",
+    "scale_mode": "SCALED",
+    "bounding_box": {
+      "x": 11.5,
+      "y": 27.0,
+      "z": 15.2
+    },
+    "surface_area": "490.8 cm²",
+    "volume": "610.0 cm³",
+    "scanned_height": 27.0,
+    "caliper_height": 26.8,
+    "validation_status": "VALIDATED",
+    "validation_notes": "Measured from base of hoofs to tip of erect ears."
+  },
+  "structure_3d": {
+    "mesh_status": "POISSON_WATERTIGHT",
+    "texture_status": "TERRACOTTA_PBR",
+    "polygon_count": 616,
+    "vertex_count": 336,
+    "point_cloud_status": "21,800 DENSE POINTS RESOLVED",
+    "texture_resolution": "2048 x 2048 px",
+    "reconstruction_pipeline": "OpenSfM + Poisson Mesh Engine"
+  },
+  "object_characteristics": {
+    "material": {
+      "value": "Burnt River Alluvium Clay",
+      "source": "Human-entered",
+      "verified": "COMMUNITY-PROVIDED"
+    },
+    "dominant_colour": {
+      "value": "Terracotta Brick Ochre",
+      "source": "AI-suggested",
+      "verified": "COMMUNITY-PROVIDED"
+    },
+    "surface_appearance": {
+      "value": "Matte natural kiln finish, unglazed",
+      "source": "Human-entered",
+      "verified": "COMMUNITY-PROVIDED"
+    },
+    "texture": {
+      "value": "Porous earthenware with impressed clay pellet jewelry",
+      "source": "Human-entered",
+      "verified": "COMMUNITY-PROVIDED"
+    },
+    "shape": {
+      "value": "Stylized tall quadruped with tubular neck and leaf-shaped ears",
+      "source": "AI-suggested",
+      "verified": "COMMUNITY-PROVIDED"
+    },
+    "approximate_period": {
+      "value": "1960s Traditional Continuity",
+      "source": "Human-entered",
+      "verified": "COMMUNITY-PROVIDED"
+    },
+    "condition": {
+      "value": "Good; minor clay flake near left ear apex",
+      "source": "Human-entered",
+      "verified": "COMMUNITY-PROVIDED"
+    },
+    "craft_technique": {
+      "value": "Four wheel-thrown hollow legs joined to hollow body",
+      "source": "Human-entered",
+      "verified": "COMMUNITY-PROVIDED"
+    }
+  },
+  "condition_notes": {
+    "cracks": "Hairline firing fissure along underside belly, sealed naturally during kiln bake.",
+    "breakage": "Tiny 1mm chip on tip of left ear.",
+    "surface_damage": "None.",
+    "discoloration": "Kiln flash smoking marks on flank.",
+    "missing_parts": "None.",
+    "wear": "Minimal.",
+    "restoration": "None required."
+  },
+  "photo_gallery": [
+    {
+      "label": "Front View",
+      "url": "/static/assets/images/view_front.jpg",
+      "angle": 0,
+      "type": "PRIMARY"
+    },
+    {
+      "label": "Side Profile",
+      "url": "/static/assets/images/view_left.jpg",
+      "angle": 90,
+      "type": "ORTHOGONAL"
+    }
+  ],
+  "oral_knowledge": {
+    "audio_url": "/static/assets/audio/dh_ind_0003_oral_lore.wav",
+    "duration": "00:40",
+    "speaker": "Sudhir Kumbhakar",
+    "speaker_role": "Folk Potter Elder, Panchmura",
+    "language": "Bengali (Rarh regional idiom)",
+    "status": "Community-provided audio / Awaiting Institutional archive review",
+    "status_label": "COMMUNITY-PROVIDED",
+    "transcript": "আমাদের পাঁচমুড়ায় বংশপরম্পরায় মাটির ঘোড়া গড়া হয়। চাকার ওপর আগে চারটে পা, ঘাড় আর শরীর আলাদা তৈরি করে তারপর হাতে জুড়ে নকশা বসাই। এটি ধর্মঠাকুরের থানে মানতের ঘোড়া।",
+    "translation": "In our Panchmura village, terracotta horses have been created across generations. Four legs, the towering neck, and body are thrown separately on the potter's wheel, then joined together and decorated with clay pellets. It is dedicated as a vow at Dharmathakur village shrines."
+  },
+  "map_data": {
+    "cultural_origin": {
+      "name": "Panchmura, Bankura District, West Bengal",
+      "lat": 22.9667,
+      "lng": 87.1667,
+      "state": "West Bengal",
+      "details": "Folk pottery hamlet of traditional Bankura terracotta artists."
+    },
+    "community_region": {
+      "name": "Bishnupur Terracotta Belt",
+      "lat": 23.0678,
+      "lng": 87.3167,
+      "state": "West Bengal",
+      "details": "Famous heritage region known for Malla-era terracotta temples."
+    },
+    "documentation_location": {
+      "name": "Panchmura Craft Documentation Cell",
+      "lat": 22.9701,
+      "lng": 87.169,
+      "state": "West Bengal",
+      "details": "Rural field documentation post."
+    },
+    "current_display": {
+      "name": "Bengal Craft Museum, Salt Lake, Kolkata",
+      "lat": 22.5855,
+      "lng": 88.4178,
+      "state": "West Bengal",
+      "details": "Folk Arts Heritage Gallery."
+    },
+    "location_privacy": "PUBLIC"
+  },
+  "provenance": [
+    {
+      "step": "ARTIFACT CREATED",
+      "date": "1968",
+      "actor": "Panchmura Kumbhakar Artisans",
+      "action": "Sculpted and kiln-fired using local pit kiln.",
+      "source": "Artisan family ledger",
+      "status": "COMMUNITY-PROVIDED"
+    },
+    {
+      "step": "DOCUMENTED",
+      "date": "2026-09-17",
+      "actor": "Rural Heritage Outreach Team",
+      "action": "Field scan and community audio recording.",
+      "source": "Docket #WB-BK-003",
+      "status": "COMMUNITY-PROVIDED"
+    }
+  ],
+  "passport_url": "/passport.html?id=DH-IND-0003",
+  "updated_at": "2026-09-30T12:34:26.162575"
+}

@@ -1,0 +1,280 @@
+{
+  "id": "DH-IND-0001",
+  "name": "GOLDEN BUDDHA IN DHYANA MUDRA",
+  "artifact_type": "Sacred Gilded Bronze Sculpture",
+  "material": "Gilded Bronze & Gold Leaf (Madhuchishta Vidhana)",
+  "craft_technique": "Classical Lost-Wax Gilded Bronze Casting",
+  "region": "Bihar / Uttar Pradesh",
+  "community": "Classical Buddhist Monastic Guild of Nalanda & Sarnath",
+  "approximate_period": "Gupta / Pala Classical Era (c. 5th–8th Century CE)",
+  "traditional_use": "Sacred contemplative icon for monastic meditation (Dhyana / Vipassana) and ritual consecration.",
+  "cultural_significance": "Depicts Gautama Buddha in supreme meditative absorption (Samadhi) in Padmasana with hands in Dhyana Mudra. The radiant halo (Prabhavali) and flame Ushnisha signify transcendent wisdom, equanimity, and inner awakening.",
+  "associated_practice": "Dhyana meditation, Vesak sanctification, and circumambulation (Pradaksina).",
+  "documentation_date": "2026-09-15",
+  "contributor": "Dr. Anandamaya Shastri, Senior Buddhist Archaeologist",
+  "scan_status": "COMPLETED",
+  "3d_status": "COMPLETED",
+  "3d_model_url": "/static/assets/models/buddha.glb",
+  "scan_video_url": "/static/assets/videos/buddha_scan.mp4",
+  "scan_video_webp": "/static/assets/videos/buddha_scan.webp",
+  "scan_video_poster": "/static/assets/videos/buddha_scan_poster.jpg",
+  "scan_recording": {
+    "title": "Automated 360° Photogrammetric Turntable Scan Recording",
+    "filename": "scan_recording_DH-IND-0001_1790848319.mp4",
+    "video_url": "/static/assets/videos/buddha_scan.mp4",
+    "webp_url": "/static/assets/videos/buddha_scan.webp",
+    "poster_url": "/static/assets/videos/buddha_scan_poster.jpg",
+    "resolution": "1280x720 HD",
+    "fps": 20,
+    "frames": 28,
+    "fiducial_scale_ref": "ArUco #42 (50.0mm)",
+    "recorded_at": "2026-10-01 15:22 IST"
+  },
+  "thumbnail_url": "/static/assets/images/view_front.jpg",
+  "verification_status": "INSTITUTION-VERIFIED",
+  "verification_badge": "INSTITUTION-VERIFIED",
+  "verification_level": 4,
+  "scale_reference": "DETECTED",
+  "scale_marker_id": 42,
+  "scale_status": "SCALED",
+  "dimensions": {
+    "height": 24.5,
+    "width": 18.2,
+    "depth": 14.6,
+    "unit": "cm",
+    "scale_mode": "SCALED",
+    "bounding_box": {
+      "x": 18.2,
+      "y": 24.5,
+      "z": 14.6
+    },
+    "surface_area": "984.2 cm²",
+    "volume": "1640.8 cm³",
+    "scanned_height": 24.5,
+    "caliper_height": 0.7,
+    "validation_status": "VALIDATED",
+    "validation_notes": "Mitutoyo Digital Caliper"
+  },
+  "structure_3d": {
+    "mesh_status": "POISSON_WATERTIGHT",
+    "texture_status": "BAKED_PBR_2K",
+    "polygon_count": 1796,
+    "vertex_count": 960,
+    "point_cloud_status": "48,290 DENSE POINTS RESOLVED",
+    "texture_resolution": "2048 x 2048 px",
+    "reconstruction_pipeline": "OpenSfM (Structure-from-Motion) + Poisson Screened Surface Reconstruction"
+  },
+  "object_characteristics": {
+    "material": {
+      "value": "Gilded Bronze with Gold Leaf",
+      "source": "Human-entered",
+      "verified": "INSTITUTION-VERIFIED"
+    },
+    "dominant_colour": {
+      "value": "Luminous Antique Gold",
+      "source": "AI-suggested",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "surface_appearance": {
+      "value": "Smooth classical cast bronze with gilded gold leaf patina and subtle antique burnish",
+      "source": "Human-entered",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "texture": {
+      "value": "Fibrous cord impression with embossed tribal lozenges",
+      "source": "Human-entered",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "shape": {
+      "value": "Seated Buddha in Padmasana on Tiered Double-Lotus Base with Prabhavali Halo",
+      "source": "AI-suggested",
+      "verified": "COMMUNITY-PROVIDED"
+    },
+    "approximate_period": {
+      "value": "circa 5th–8th Century CE (Gupta–Pala Classical Golden Age)",
+      "source": "Human-entered",
+      "verified": "INSTITUTION-VERIFIED"
+    },
+    "condition": {
+      "value": "Intact, light superficial cupric oxidation along base",
+      "source": "Human-entered",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "craft_technique": {
+      "value": "Dhokra Lost-Wax (Cire Perdue) casting with clay core",
+      "source": "Human-entered",
+      "verified": "INSTITUTION-VERIFIED"
+    }
+  },
+  "condition_notes": {
+    "cracks": "None observed in primary brass structural envelope.",
+    "breakage": "Minor 2mm dent on outer lower pedestal flange, does not compromise stability.",
+    "surface_damage": "Superficial verdigris patina near lower rim, chemically stable.",
+    "discoloration": "Natural darkened bronze oxidation inside neck cavity due to historical offerings.",
+    "missing_parts": "Original ritual coconut and mango leaf brass lid is intact and seated.",
+    "wear": "Handling burnish on spherical grip curvature consistent with ritual veneration.",
+    "restoration": "Cleaned with non-acidic ethanol swab by conservation team in 2024."
+  },
+  "photo_gallery": [
+    {
+      "label": "Front View (0°)",
+      "url": "/static/assets/images/view_front.jpg",
+      "angle": 0,
+      "type": "PRIMARY"
+    },
+    {
+      "label": "Left View (90°)",
+      "url": "/static/assets/images/view_left.jpg",
+      "angle": 90,
+      "type": "ORTHOGONAL"
+    },
+    {
+      "label": "Back View (180°)",
+      "url": "/static/assets/images/view_back.jpg",
+      "angle": 180,
+      "type": "ORTHOGONAL"
+    },
+    {
+      "label": "Right View (270°)",
+      "url": "/static/assets/images/view_right.jpg",
+      "angle": 270,
+      "type": "ORTHOGONAL"
+    },
+    {
+      "label": "Top Oblique (45°)",
+      "url": "/static/assets/images/view_top.jpg",
+      "angle": 45,
+      "type": "OBLIQUE"
+    },
+    {
+      "label": "Calibration Reference",
+      "url": "/static/assets/images/calibration_aruco.jpg",
+      "angle": 0,
+      "type": "CALIBRATION"
+    },
+    {
+      "label": "Filigree Detail Macro",
+      "url": "/static/assets/images/detail_filigree.jpg",
+      "angle": 315,
+      "type": "MACRO"
+    }
+  ],
+  "oral_knowledge": {
+    "audio_url": "/static/assets/audio/dh_ind_0001_oral_lore.wav",
+    "duration": "00:48",
+    "speaker": "Dr. Anandamaya Shastri",
+    "speaker_role": "Senior Archaeologist & Sanskrit/Pali Epigraphist",
+    "language": "Hindi / Sanskrit & Pali",
+    "status": "AI-assisted / Verified by Tribal Research Cell",
+    "status_label": "AI-ASSISTED TRANSCRIPTION",
+    "transcript": "यह ध्यानस्थ बुद्ध प्रतिमा गुप्त और पाल कालीन धातुशिल्प का अनुपम शिखर है। भगवान बुद्ध पद्मासन में विराजित हैं और उनके दोनों हाथ ध्यान मुद्रा में गोदी में रखे हैं। सिर पर उष्णीष और दोनों कानों के लंबे कुंडल त्याग और परम प्रज्ञा को दर्शाते हैं।",
+    "translation": "This seated Buddha statue in Dhyana Mudra represents the pinnacle of classical Gupta and Pala metallurgy. Gautama Buddha is seated in Padmasana with both hands reposed in Dhyana Mudra in his lap. The cranial Ushnisha and elongated earlobes symbolize supreme renunciation and enlightened wisdom."
+  },
+  "map_data": {
+    "cultural_origin": {
+      "name": "Bodh Gaya & Sarnath, Bihar/UP",
+      "lat": 24.6961,
+      "lng": 84.9869,
+      "state": "Bihar",
+      "details": "Sacred historical enlightenment and teaching center of early Buddhism."
+    },
+    "community_region": {
+      "name": "Kondagaon Craft Cluster",
+      "lat": 19.5978,
+      "lng": 81.6706,
+      "state": "Chhattisgarh",
+      "details": "Active community workshop cluster of National Awardee Dhokra sculptors."
+    },
+    "documentation_location": {
+      "name": "Heritage Field Scanning Lab, Bhilai",
+      "lat": 21.2135,
+      "lng": 81.3784,
+      "state": "Chhattisgarh",
+      "details": "Portable Rig 01 Field Station deployed for cultural census."
+    },
+    "current_display": {
+      "name": "National Handicrafts & Handlooms Museum, New Delhi",
+      "lat": 28.6143,
+      "lng": 77.2427,
+      "state": "Delhi",
+      "details": "Gallery of Traditional Indian Metalware, Case #14-B."
+    },
+    "location_privacy": "PUBLIC"
+  },
+  "provenance": [
+    {
+      "step": "ARTIFACT CREATED",
+      "date": "circa 1895",
+      "actor": "Ghadwa Master Artisan Ancestors",
+      "action": "Hand-forged via cire-perdue method for Kondagaon community temple.",
+      "source": "Oral Genealogical Lineage of Baghel Family",
+      "status": "SOURCE-VERIFIED"
+    },
+    {
+      "step": "DOCUMENTED",
+      "date": "2026-09-12",
+      "actor": "Bhilai Cultural Heritage Field Team",
+      "action": "Field accessioning, community interviews, and physical inspection.",
+      "source": "Field Accession Logbook #BHL-402",
+      "status": "COMMUNITY-PROVIDED"
+    },
+    {
+      "step": "SCANNED",
+      "date": "2026-09-15 10:14 IST",
+      "actor": "Automated Turntable Scanner Rig v2.4",
+      "action": "36-frame 360° photogrammetric capture with 50mm ArUco scale marker.",
+      "source": "Telemetry Log Session #SC-26214-01",
+      "status": "SOURCE-VERIFIED"
+    },
+    {
+      "step": "3D RECONSTRUCTED",
+      "date": "2026-09-15 10:22 IST",
+      "actor": "Screened Poisson Mesh Reconstruction Engine",
+      "action": "Resolved 48,290 dense points into 2,592 polygon watertight manifold mesh.",
+      "source": "Job Manifest #REC-3D-991",
+      "status": "SOURCE-VERIFIED"
+    },
+    {
+      "step": "COMMUNITY CONTRIBUTION",
+      "date": "2026-09-16",
+      "actor": "Mansingh Baghel",
+      "action": "Recorded native Halbi/Hindi oral history tape explaining beeswax winding.",
+      "source": "Audio Archive Master #AUD-CG-001",
+      "status": "COMMUNITY-PROVIDED"
+    },
+    {
+      "step": "SOURCE VERIFIED",
+      "date": "2026-09-18",
+      "actor": "Regional Directorate of Culture, Raipur",
+      "action": "Cross-referenced casting style with 19th c. central Indian tribal brass catalog.",
+      "source": "Official Survey Dossier #RPR-CULT-26",
+      "status": "SOURCE-VERIFIED"
+    },
+    {
+      "step": "INSTITUTION VERIFIED",
+      "date": "2026-09-22",
+      "actor": "National Heritage Preservation Council Expert Panel",
+      "action": "Formal ratification of structural measurements, provenance chain, and authenticity.",
+      "source": "National Registry Entry Docket #NR-8841",
+      "status": "INSTITUTION-VERIFIED"
+    },
+    {
+      "step": "PUBLISHED",
+      "date": "2026-09-23",
+      "actor": "Digital Heritage Artifact Registry",
+      "action": "Digital Heritage Passport generated with cryptographic fingerprint & public QR.",
+      "source": "Passport URL /passport.html?id=DH-IND-0001",
+      "status": "INSTITUTION-VERIFIED"
+    },
+    {
+      "step": "PHYSICAL CALIPER VALIDATION",
+      "date": "2026-10-01 19:34 IST",
+      "actor": "Metrology Quality Specialist",
+      "action": "Physical caliper height 0.7 cm recorded against scanned 24.5 cm.",
+      "source": "Mitutoyo Digital Caliper Log",
+      "status": "VALIDATED"
+    }
+  ],
+  "passport_url": "/passport.html?id=DH-IND-0001",
+  "updated_at": "2026-10-01T19:34:32.030897"
+}

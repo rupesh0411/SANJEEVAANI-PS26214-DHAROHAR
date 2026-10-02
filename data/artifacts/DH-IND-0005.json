@@ -1,0 +1,187 @@
+{
+  "id": "DH-IND-0005",
+  "name": "BIDRIWARE SILVER INLAY HUQQA BASE",
+  "artifact_type": "Decorative Metalware",
+  "material": "Zinc alloy (96% zinc, 4% copper) with pure silver wire inlay (Tarkashi & Taihnishan)",
+  "craft_technique": "Casting, chiseling, pure silver wire inlay, and darkening with salt-rich soil from Bidar Fort",
+  "region": "Karnataka",
+  "community": "Bidri Craft Artisan Guild of Bidar",
+  "approximate_period": "18th Century CE (Bahmani / Barid Shahi Tradition)",
+  "traditional_use": "Opulent water-pipe huqqa container crafted for Deccan Sultanate nobility and diplomatic gifts.",
+  "cultural_significance": "Renowned for its striking velvety black matte surface contrasted against brilliant pure silver geometric and floral arabesque inlays.",
+  "associated_practice": "Courtly etiquette and royal gift exchanges across the Deccan Sultanates.",
+  "documentation_date": "2026-09-12",
+  "contributor": "Shah Rasheed Ahmed Quadri, Padma Shri Awardee, Bidar",
+  "scan_status": "COMPLETED",
+  "3d_status": "COMPLETED",
+  "3d_model_url": "/static/assets/models/huqqa_base.glb",
+  "thumbnail_url": "/static/assets/images/view_front.jpg",
+  "verification_status": "INSTITUTION-VERIFIED",
+  "verification_badge": "INSTITUTION-VERIFIED",
+  "verification_level": 4,
+  "scale_reference": "DETECTED",
+  "scale_marker_id": 42,
+  "scale_status": "SCALED",
+  "dimensions": {
+    "height": 17.2,
+    "width": 10.4,
+    "depth": 10.4,
+    "unit": "cm",
+    "scale_mode": "SCALED",
+    "bounding_box": {
+      "x": 10.4,
+      "y": 17.2,
+      "z": 10.4
+    },
+    "surface_area": "430.5 cm²",
+    "volume": "485.0 cm³",
+    "scanned_height": 17.2,
+    "caliper_height": 17.1,
+    "validation_status": "VALIDATED",
+    "validation_notes": "Cross-calibrated with physical precision caliper."
+  },
+  "structure_3d": {
+    "mesh_status": "POISSON_WATERTIGHT",
+    "texture_status": "BAKED_PBR_2K",
+    "polygon_count": 640,
+    "vertex_count": 352,
+    "point_cloud_status": "29,400 DENSE POINTS RESOLVED",
+    "texture_resolution": "2048 x 2048 px",
+    "reconstruction_pipeline": "OpenSfM Structure-from-Motion Engine"
+  },
+  "object_characteristics": {
+    "material": {
+      "value": "Zinc-Copper Alloy with 99.9% Pure Silver Sheet/Wire Inlay",
+      "source": "Human-entered",
+      "verified": "INSTITUTION-VERIFIED"
+    },
+    "dominant_colour": {
+      "value": "Velvet Carbon Black with Radiant Silver Inlay",
+      "source": "AI-suggested",
+      "verified": "INSTITUTION-VERIFIED"
+    },
+    "surface_appearance": {
+      "value": "Chemically oxidised deep black using Bidar Fort soil",
+      "source": "Human-entered",
+      "verified": "INSTITUTION-VERIFIED"
+    },
+    "texture": {
+      "value": "Flush smooth inlay polished with groundnut oil",
+      "source": "Human-entered",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "shape": {
+      "value": "Bell-shaped globular urn with flaring pedestal foot",
+      "source": "AI-suggested",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "approximate_period": {
+      "value": "Late 18th Century CE",
+      "source": "Human-entered",
+      "verified": "INSTITUTION-VERIFIED"
+    },
+    "condition": {
+      "value": "Pristine, no silver detachment",
+      "source": "Human-entered",
+      "verified": "INSTITUTION-VERIFIED"
+    },
+    "craft_technique": {
+      "value": "Taihnishan (sheet inlay) and Tarkashi (wire inlay)",
+      "source": "Human-entered",
+      "verified": "INSTITUTION-VERIFIED"
+    }
+  },
+  "condition_notes": {
+    "cracks": "None.",
+    "breakage": "None.",
+    "surface_damage": "Microscopic handling abrasions on base underside.",
+    "discoloration": "None; characteristic Bidar fort mud patina remains jet black.",
+    "missing_parts": "None; silver filigree intact throughout all quadrants.",
+    "wear": "Very mild around flaring rim collar.",
+    "restoration": "Treated with mineral oil stabilization in 2022."
+  },
+  "photo_gallery": [
+    {
+      "label": "Front View",
+      "url": "/static/assets/images/view_front.jpg",
+      "angle": 0,
+      "type": "PRIMARY"
+    },
+    {
+      "label": "Inlay Macro Detail",
+      "url": "/static/assets/images/detail_filigree.jpg",
+      "angle": 0,
+      "type": "MACRO"
+    }
+  ],
+  "oral_knowledge": {
+    "audio_url": "/static/assets/audio/dh_ind_0005_oral_lore.wav",
+    "duration": "00:46",
+    "speaker": "Shah Rasheed Ahmed Quadri",
+    "speaker_role": "Padma Shri Awardee & Master Bidri Artist",
+    "language": "Urdu / Dakhni",
+    "status": "Verified by National Museum Conservation Laboratory",
+    "status_label": "INSTITUTION-VERIFIED",
+    "transcript": "बिदरी का यह काला रंग दुनिया में और कहीं नहीं बन सकता। यह बीदर के पुराने किले की सदियों पुरानी मिट्टी से आता है, जिसमें खास तरह का शोरा और नमक होता है। जब इस पर चांदी जड़ी जाती है, तो यह सदियों तक नहीं मिटती।",
+    "translation": "This deep velvety black luster of Bidriware cannot be replicated anywhere in the world. It comes specifically from centuries-old soil gathered from unexposed ruins of Bidar Fort, containing unique natural nitrates. When pure silver is inlaid into it, the contrast endures for centuries without tarnishing."
+  },
+  "map_data": {
+    "cultural_origin": {
+      "name": "Bidar Fort Historic Precinct, Karnataka",
+      "lat": 17.915,
+      "lng": 77.5186,
+      "state": "Karnataka",
+      "details": "Bahmani capital where Persian master metalcrafters established the craft."
+    },
+    "community_region": {
+      "name": "Bidri Craft Artisan Colony, Old City",
+      "lat": 17.9125,
+      "lng": 77.521,
+      "state": "Karnataka",
+      "details": "Living workshop cluster practicing Tarkashi inlay."
+    },
+    "documentation_location": {
+      "name": "Karnataka Archaeology Field Unit, Bidar",
+      "lat": 17.914,
+      "lng": 77.52,
+      "state": "Karnataka",
+      "details": "Field Documentation Post #07."
+    },
+    "current_display": {
+      "name": "Salar Jung Museum, Hyderabad",
+      "lat": 17.3713,
+      "lng": 78.4803,
+      "state": "Telangana",
+      "details": "Bidriware Royal Collection, Western Block."
+    },
+    "location_privacy": "PUBLIC"
+  },
+  "provenance": [
+    {
+      "step": "ARTIFACT CREATED",
+      "date": "c. 1780",
+      "actor": "Royal Bidri Guild Atelier",
+      "action": "Hand-chiseled with floral poppy motif for Deccan court.",
+      "source": "Royal court accession seal",
+      "status": "INSTITUTION-VERIFIED"
+    },
+    {
+      "step": "DOCUMENTED",
+      "date": "2026-09-11",
+      "actor": "National Heritage Mission",
+      "action": "High-fidelity digital preservation scan.",
+      "source": "Record #KA-BID-05",
+      "status": "INSTITUTION-VERIFIED"
+    },
+    {
+      "step": "PUBLISHED",
+      "date": "2026-09-22",
+      "actor": "Digital Heritage Registry",
+      "action": "Live in public museum digital passport network.",
+      "source": "Passport DH-IND-0005",
+      "status": "INSTITUTION-VERIFIED"
+    }
+  ],
+  "passport_url": "/passport.html?id=DH-IND-0005",
+  "updated_at": "2026-09-30T12:34:26.164574"
+}

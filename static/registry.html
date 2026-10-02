@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heritage Registry, Verification & Provenance | Digital Heritage</title>
+  
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script src="/static/js/qrcode.min.js"></script>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('dh_theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Top Header & System HUD -->
+  <header class="top-header">
+    <div class="header-inner">
+      <div class="brand-section">
+        <a href="/" style="text-decoration: none; display: flex; align-items: center; gap: 1rem;">
+          <div class="brand-logo-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>
+          </div>
+          <div class="brand-text">
+            <h1>DIGITAL HERITAGE SCANNER</h1>
+            <p>CYBER-ARCHAEOLOGY COMMAND CENTER &bull; SIH-26214</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="active-artifact-badge">
+        <span class="artifact-id-pill" id="active-artifact-id-text">DH-IND-0001</span>
+        <span class="artifact-name-heading" id="active-artifact-name-text">GOLDEN BUDDHA IN DHYANA MUDRA</span>
+      </div>
+
+      <div class="status-pills-cluster">
+        <span class="status-pill verified" id="global-verif-status">
+          <span class="dot-pulse"></span> INSTITUTION-VERIFIED
+        </span>
+        <span class="status-pill camera-connected" id="global-camera-status">
+          <span class="dot-pulse"></span> REGISTRY ONLINE
+        </span>
+      </div>
+
+      <div class="header-actions">
+        <div class="mode-toggle-group">
+          <button class="mode-btn" id="mode-live-hw" title="Engage physical hardware cameras">LIVE HARDWARE</button>
+          <button class="mode-btn demo-active" id="mode-demo" title="Run 360° calibrated photogrammetry simulation">DEMO MODE</button>
+        </div>
+                <button class="theme-toggle-btn" id="btn-theme-toggle" title="Toggle Light / Dark Mode" aria-label="Toggle Theme">
+          <span class="theme-toggle-icon">☀️</span>
+          <span class="theme-toggle-text">LIGHT</span>
+        </button>
+
+        <button class="btn-primary" id="btn-open-pitch">
+          <span>⚡ 10-SEC BRIEFING</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Multi-Page Navigation Bar -->
+  <nav class="main-navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-link" data-page="dashboard"><span>🏛️ COMMAND CENTER</span></a>
+      <a href="/scanner.html" class="nav-link" data-page="scanner"><span>📷 LIVE SCAN STUDIO</span></a>
+      <a href="/viewer.html" class="nav-link" data-page="viewer"><span>🏺 3D LABORATORY</span></a>
+      <a href="/map.html" class="nav-link" data-page="map"><span>🗺️ HERITAGE GIS MAP</span></a>
+      <a href="/cultural.html" class="nav-link" data-page="cultural"><span>📜 CULTURAL LORE</span></a>
+      <a href="/registry.html" class="nav-link active" data-page="registry"><span>🛡️ REGISTRY & AUDIT</span></a>
+      <a href="/passport.html?id=DH-IND-0001" target="_blank" class="nav-link passport-nav-link" data-page="passport"><span>📱 VISITOR PASSPORT ↗</span></a>
+      <button class="btn-portal-scanner trigger-portal-scanner" id="btn-open-portal-scanner" title="Open Camera Scanner to Access Artifact Information"><span>📷 SCAN TO ACCESS PORTAL</span></button>
+      
+      <div style="margin-left: auto; display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-size: 0.72rem; color: var(--text-dim); font-family: var(--font-mono);">SELECT ARTIFACT:</span>
+        <select id="artifact-selector" style="background: var(--bg-input); color: var(--text-main); border: 1px solid var(--border-subtle); padding: 0.25rem 0.6rem; border-radius: var(--radius-sm); font-size: 0.75rem; font-family: var(--font-mono); outline: none;">
+          <option value="DH-IND-0001">DH-IND-0001 - Golden Buddha in Dhyana Mudra</option>
+          <option value="DH-IND-0002">DH-IND-0002 - Chola Bronze Nataraja</option>
+          <option value="DH-IND-0003">DH-IND-0003 - Terracotta Horse of Bankura</option>
+          <option value="DH-IND-0004">DH-IND-0004 - Kutch Rogan Painted Textile</option>
+          <option value="DH-IND-0005">DH-IND-0005 - Bidriware Silver Inlay Huqqa Base</option>
+        </select>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero Banner -->
+  <div class="page-hero-banner">
+    <div class="page-hero-title">
+      <h2><span>🛡️</span> HERITAGE REGISTRY, VERIFICATION &amp; PROVENANCE LEDGER</h2>
+      <p>Progressive Trust Lifecycle &bull; Immutable Chronological Chain of Custody &bull; Conservation Assessment</p>
+    </div>
+    <div style="display: flex; gap: 0.5rem; align-items: center;">
+      <span class="status-pill verified" id="registry-status-tag">INSTITUTION-VERIFIED</span>
+    </div>
+  </div>
+
+  <!-- Main Registry Content -->
+  <main style="max-width: 1800px; margin: 1.25rem auto; padding: 0 1.25rem;">
+    <div style="display: grid; grid-template-columns: 1.35fr 1fr; gap: 1.5rem; align-items: start;">
+
+      <!-- Left Column: Verification Stepper & Provenance Ledger -->
+      <section style="display: flex; flex-direction: column; gap: 1.25rem;">
+
+        <!-- Progressive Trust Lifecycle Panel -->
+        <div class="dashboard-panel">
+          <div class="panel-header">
+            <div class="panel-header-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM10 16L6 12L7.41 10.59L10 13.17L16.59 6.58L18 8L10 16Z"/></svg>
+              <span>PROGRESSIVE TRUST VERIFICATION LIFECYCLE</span>
+            </div>
+            <span style="font-size: 0.7rem; font-family: var(--font-mono); color: var(--text-dim);">CLICK TO TRANSITION STATUS</span>
+          </div>
+
+          <div class="panel-body" style="padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem;">
+            
+            <p style="font-size: 0.74rem; color: var(--text-dim); line-height: 1.5;">
+              <b>PROGRESSIVE VERIFICATION PRINCIPLE:</b> Verification is a trust milestone, not a binary gatekeeper. Artifacts and Digital Passports are completely accessible at all four stages.
+            </p>
+
+            <div class="verification-stepper-box" id="verification-steps-container">
+              <div class="verification-step-pill" data-status="PENDING">
+                <div>
+                  <div style="font-size: 0.82rem; font-weight: 700;">1. PENDING</div>
+                  <div style="font-size: 0.7rem; color: var(--text-dim);">Initial field capture, awaiting oral lore and community review</div>
+                </div>
+                <span style="font-size: 1.1rem;">⏳</span>
+              </div>
+
+              <div class="verification-step-pill" data-status="COMMUNITY-PROVIDED">
+                <div>
+                  <div style="font-size: 0.82rem; font-weight: 700;">2. COMMUNITY-PROVIDED</div>
+                  <div style="font-size: 0.7rem; color: var(--text-dim);">Oral narrative &amp; traditional artisan lineage recorded by guild elders</div>
+                </div>
+                <span style="font-size: 1.1rem;">👥</span>
+              </div>
+
+              <div class="verification-step-pill" data-status="SOURCE-VERIFIED">
+                <div>
+                  <div style="font-size: 0.82rem; font-weight: 700;">3. SOURCE-VERIFIED</div>
+                  <div style="font-size: 0.7rem; color: var(--text-dim);">Regional cultural survey, craft guild registry &amp; material analysis matched</div>
+                </div>
+                <span style="font-size: 1.1rem;">📑</span>
+              </div>
+
+              <div class="verification-step-pill active" data-status="INSTITUTION-VERIFIED">
+                <div>
+                  <div style="font-size: 0.82rem; font-weight: 700; color: var(--emerald-green);">4. INSTITUTION-VERIFIED</div>
+                  <div style="font-size: 0.7rem; color: var(--text-dim);">National Museum Board / ASI registry docket officially ratified</div>
+                </div>
+                <span style="font-size: 1.1rem;">🏛️</span>
+              </div>
+            </div>
+
+            <!-- Transition Feedback -->
+            <div id="verif-feedback-alert" style="display: none; background: rgba(16, 185, 129, 0.15); border: 1px solid var(--emerald-green); padding: 0.65rem 0.85rem; border-radius: var(--radius-sm); font-size: 0.75rem; color: var(--emerald-green);">
+              ✓ Verification status updated and broadcasted to national heritage network!
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Immutable Chronological Provenance Ledger -->
+        <div class="dashboard-panel">
+          <div class="panel-header">
+            <div class="panel-header-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H14.82C14.4 1.84 13.3 1 12 1C10.7 1 9.6 1.84 9.18 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM12 3C12.55 3 13 3.45 13 4C13 4.55 12.55 5 12 5C11.45 5 11 4.55 11 4C11 3.45 11.45 3 12 3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z"/></svg>
+              <span>CHRONOLOGICAL PROVENANCE &amp; CHAIN OF CUSTODY</span>
+            </div>
+            <span style="font-size: 0.7rem; font-family: var(--font-mono); color: var(--antique-gold);">IMMUTABLE AUDIT TRAIL</span>
+          </div>
+
+          <div class="panel-body" style="padding: 1.25rem;">
+            <div class="timeline-container" id="timeline-list">
+              <!-- Dynamically populated from artifact.provenance_timeline -->
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Right Column: Physical Conservation & Documentation Archive -->
+      <section style="display: flex; flex-direction: column; gap: 1.25rem;">
+
+        <!-- Physical Conservation & Condition Assessment -->
+        <div class="dashboard-panel">
+          <div class="panel-header">
+            <div class="panel-header-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"/></svg>
+              <span>PHYSICAL CONSERVATION &amp; CONDITION</span>
+            </div>
+          </div>
+          <div class="panel-body" style="padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem;" id="condition-notes-list">
+            <!-- Dynamically populated condition metrics -->
+          </div>
+        </div>
+
+        <!-- Documentation Photo Archive -->
+        <div class="dashboard-panel">
+          <div class="panel-header">
+            <div class="panel-header-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z"/></svg>
+              <span>DOCUMENTATION PHOTO ARCHIVE</span>
+            </div>
+          </div>
+          <div class="panel-body" style="padding: 1rem;">
+            <div class="photo-gallery-grid" id="gallery-thumbnails">
+              <!-- Dynamically populated photo thumbnails -->
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- 10-Second Pitch Modal -->
+  <dialog class="modal-pitch" id="modal-pitch">
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-gold); padding-bottom: 0.75rem;">
+      <h2 style="font-size: 1.15rem; color: var(--text-gold); font-weight: 800;">⚡ 10-SECOND JUDGE SYSTEM BRIEFING</h2>
+      <button class="btn-secondary" id="btn-close-pitch" style="padding: 0.25rem 0.6rem;">✕ CLOSE</button>
+    </div>
+    <div class="pitch-grid">
+      <div class="pitch-item"><div class="q">1. WHAT IS BEING SCANNED?</div><div class="a" id="pitch-q1">Traditional Brass Kalash</div></div>
+      <div class="pitch-item"><div class="q">2. WHERE IS IT FROM?</div><div class="a" id="pitch-q2">Bastar, Chhattisgarh</div></div>
+      <div class="pitch-item"><div class="q">3. WHAT HAS BEEN CAPTURED?</div><div class="a" id="pitch-q3">36 Multi-angle Frames</div></div>
+      <div class="pitch-item"><div class="q">4. WHAT DOES THE 3D MODEL LOOK LIKE?</div><div class="a" id="pitch-q4">Watertight Manifold GLB</div></div>
+      <div class="pitch-item"><div class="q">5. WHAT ARE ITS DIMENSIONS?</div><div class="a" id="pitch-q5">12.2 × 18.4 × 11.8 cm</div></div>
+      <div class="pitch-item"><div class="q">6. WHAT IS ITS CULTURAL CONTEXT?</div><div class="a" id="pitch-q6">Ritual Purna Kumbha Vessel</div></div>
+      <div class="pitch-item"><div class="q">7. WHO CONTRIBUTED KNOWLEDGE?</div><div class="a" id="pitch-q7">Mansingh Baghel (Master Artisan)</div></div>
+      <div class="pitch-item"><div class="q">8. WHERE IS IT LOCATED?</div><div class="a" id="pitch-q8">Origin: Bastar • Display: National Museum</div></div>
+      <div class="pitch-item"><div class="q">9. WHAT IS VERIFIED?</div><div class="a" id="pitch-q9">INSTITUTION-VERIFIED</div></div>
+      <div class="pitch-item"><div class="q">10. WHAT IS STILL PENDING?</div><div class="a" id="pitch-q10">Caliper Validated (18.1 cm confirmed)</div></div>
+      <div class="pitch-item"><div class="q">11. CAN A VISITOR ACCESS IT?</div><div class="a" id="pitch-q11">Yes, via Mobile Digital Passport</div></div>
+    </div>
+  </dialog>
+
+  <!-- Tourist Phone Modal -->
+  <dialog class="modal-tourist-phone" id="modal-tourist-phone" style="margin: auto; background: var(--bg-dark); color: var(--text-main); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 1.5rem; max-width: 960px; width: 95%; box-shadow: 0 10px 45px rgba(0,0,0,0.85); outline: none;">
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-gold); padding-bottom: 0.75rem;">
+      <h2 style="font-size: 1.15rem; color: var(--text-gold); font-weight: 800;">📱 DIGITAL HERITAGE PASSPORT &bull; TOURIST PHONE READY</h2>
+      <button class="btn-secondary" id="btn-close-tourist-phone" style="padding: 0.3rem 0.7rem;">✕ CLOSE</button>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 340px; gap: 1.5rem; margin-top: 1.25rem;">
+      <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.75rem; background: rgba(11, 17, 32, 0.75); padding: 1.25rem; border-radius: var(--radius-md);">
+        <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-heading);" id="tourist-modal-art-name">Artifact</div>
+        <span class="status-pill verified" id="tourist-modal-verif-badge">● INSTITUTION-VERIFIED</span>
+        <div style="padding: 12px; background: #FFFFFF; border-radius: var(--radius-md); display: inline-block;">
+          <img id="tourist-qr-img" src="/api/tourist-qr/DH-IND-0001/qr.png" alt="Passport QR" style="width: 180px; height: 180px; display: block;">
+        </div>
+        <a id="tourist-phone-lan-url" href="#" target="_blank" style="color: var(--cyan-hud); font-family: var(--font-mono); font-size: 0.72rem; word-break: break-all;"></a>
+        <div style="display: flex; gap: 0.5rem; width: 100%;">
+          <a id="btn-open-passport-tab" href="/passport.html?id=DH-IND-0001" target="_blank" class="btn-primary" style="flex: 1; text-decoration: none; justify-content: center; font-size: 0.78rem;">OPEN TAB ↗</a>
+          <button class="btn-secondary" id="btn-copy-tourist-link" style="flex: 1; justify-content: center; font-size: 0.78rem;">📋 COPY LINK</button>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+        <div style="width: 320px; height: 520px; background: #000; border: 8px solid #1E293B; border-radius: 32px; overflow: hidden;">
+          <iframe id="tourist-simulator-iframe" src="/passport.html?id=DH-IND-0001" style="width: 100%; height: 100%; border: none; background: #060913;" title="Phone Simulator"></iframe>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ES Modules -->
+  <script type="module">
+    import { HeritageNavHeader } from '/static/js/nav_header.js';
+
+    window.navHeader = new HeritageNavHeader('registry');
+
+    // Stepper click handlers
+    document.querySelectorAll('.verification-step-pill').forEach(pill => {
+      pill.addEventListener('click', async () => {
+        const targetStatus = pill.dataset.status;
+        const artId = window.navHeader.activeArtifactId || 'DH-IND-0001';
+        try {
+          const res = await fetch(`/api/artifacts/${artId}/verify`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: targetStatus })
+          });
+          if (res.ok) {
+            const updated = await res.json();
+            updateRegistryUI(updated);
+            const alert = document.getElementById('verif-feedback-alert');
+            if (alert) {
+              alert.style.display = 'block';
+              setTimeout(() => { alert.style.display = 'none'; }, 3000);
+            }
+          }
+        } catch (err) {
+          console.error("Verification update error:", err);
+        }
+      });
+    });
+
+    function updateRegistryUI(art) {
+      if (!art) return;
+
+      // Update Active Stepper Pill
+      const curStatus = art.verification_status || 'PENDING';
+      const statusTag = document.getElementById('registry-status-tag');
+      if (statusTag) {
+        statusTag.textContent = curStatus;
+        statusTag.className = 'status-pill ' + (curStatus === 'INSTITUTION-VERIFIED' ? 'verified' : 'pending');
+      }
+
+      document.querySelectorAll('.verification-step-pill').forEach(pill => {
+        if (pill.dataset.status === curStatus) {
+          pill.classList.add('active');
+        } else {
+          pill.classList.remove('active');
+        }
+      });
+
+      // Update Timeline
+      const timelineContainer = document.getElementById('timeline-list');
+      if (timelineContainer && art.provenance_timeline) {
+        timelineContainer.innerHTML = '';
+        art.provenance_timeline.forEach(event => {
+          const item = document.createElement('div');
+          item.className = 'timeline-item';
+          item.innerHTML = `
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">${event.date}</div>
+            <div class="timeline-title">${event.title}</div>
+            <div class="timeline-desc">${event.description}</div>
+            <div class="timeline-actor">CONTRIBUTOR: <b>${event.actor || 'Cultural Authority'}</b> • DOCKET: <code>${event.docket_number || 'VERIFIED'}</code></div>
+          `;
+          timelineContainer.appendChild(item);
+        });
+      }
+
+      // Update Condition Notes
+      const condList = document.getElementById('condition-notes-list');
+      if (condList && art.condition_notes) {
+        condList.innerHTML = '';
+        Object.entries(art.condition_notes).forEach(([key, val]) => {
+          const row = document.createElement('div');
+          row.className = 'info-row';
+          const label = key.replace(/_/g, ' ').toUpperCase();
+          row.innerHTML = `<div class="info-label">${label}</div><div class="info-value">${val}</div>`;
+          condList.appendChild(row);
+        });
+      }
+
+      // Update Photo Gallery
+      const galEl = document.getElementById('gallery-thumbnails');
+      if (galEl && art.photo_gallery) {
+        galEl.innerHTML = '';
+        art.photo_gallery.forEach(photo => {
+          const card = document.createElement('div');
+          card.className = 'gallery-thumbnail-card';
+          card.innerHTML = `<img src="${photo.url}" alt="${photo.label}"><div class="gallery-label">${photo.label}</div>`;
+          galEl.appendChild(card);
+        });
+      }
+    }
+
+    window.addEventListener('artifactChanged', (e) => {
+      updateRegistryUI(e.detail.artifact);
+    });
+
+    window.addEventListener('wsMessageReceived', (e) => {
+      const msg = e.detail;
+      if (msg.type === 'INITIAL_SYNC' && msg.active_artifact) {
+        updateRegistryUI(msg.active_artifact);
+      } else if (msg.type === 'VERIFICATION_CHANGED' && msg.data) {
+        updateRegistryUI(msg.data);
+      }
+    });
+  </script>
+</body>
+</html>

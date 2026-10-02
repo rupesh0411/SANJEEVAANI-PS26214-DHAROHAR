@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Heritage Passport</title>
+
+  <!-- Offline-First Stylesheets & Libraries -->
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/leaflet.css">
+
+  <script src="/static/js/leaflet.js"></script>
+  <script type="module" src="/static/js/model-viewer.min.js"></script>
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('dh_theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
+  <style>
+    /* Mobile-First Visitor Passport Dedicated Styles */
+    body {
+      background: var(--bg-deep);
+      color: var(--text-main);
+      padding-bottom: 3rem;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .passport-container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .visitor-hero-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+    .passport-seal {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 0.75rem;
+      background: linear-gradient(135deg, var(--saffron-orange), var(--antique-gold));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-glow-gold);
+    }
+    .passport-seal svg {
+      width: 28px;
+      height: 28px;
+      fill: #fff;
+    }
+    .visitor-3d-box {
+      width: 100%;
+      height: 380px;
+      background: var(--bg-viewer-3d);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+    .section-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      box-shadow: var(--shadow-card);
+    }
+    .section-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-gold);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="passport-container">
+
+    <!-- Top Return & Switcher Navigation -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem; gap: 0.5rem; flex-wrap: wrap;">
+      <a href="/" style="display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-gold); text-decoration: none; font-size: 0.75rem; font-family: var(--font-mono); background: var(--bg-chip); padding: 0.35rem 0.75rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">
+        &larr; COMMAND CENTER
+      </a>
+      <div style="display: flex; align-items: center; gap: 0.4rem;">
+        <button class="theme-toggle-btn" id="btn-theme-toggle" onclick="const cur = document.documentElement.getAttribute('data-theme') || 'light'; const nxt = cur === 'dark' ? 'light' : 'dark'; document.documentElement.setAttribute('data-theme', nxt); localStorage.setItem('dh_theme', nxt); this.querySelector('.theme-toggle-icon').textContent = nxt === 'dark' ? '🌙' : '☀️'; this.querySelector('.theme-toggle-text').textContent = nxt === 'dark' ? 'DARK' : 'LIGHT';" title="Toggle Light / Dark Mode" aria-label="Toggle Theme" style="padding: 0.25rem 0.6rem; font-size: 0.72rem;">
+          <span class="theme-toggle-icon">☀️</span> <span class="theme-toggle-text">LIGHT</span>
+        </button>
+        <a href="/scanner.html" style="display: inline-flex; align-items: center; gap: 0.3rem; color: var(--cyan-hud); text-decoration: none; font-size: 0.72rem; font-family: var(--font-mono); background: var(--bg-chip); padding: 0.3rem 0.65rem; border-radius: var(--radius-full); border: 1px solid var(--border-subtle);">
+          📷 SCAN
+        </a>
+        <select id="passport-artifact-switcher" onchange="window.location.href='/passport.html?id=' + this.value" style="background: var(--bg-input); color: var(--text-main); border: 1px solid var(--border-subtle); padding: 0.25rem 0.55rem; border-radius: var(--radius-sm); font-size: 0.72rem; font-family: var(--font-mono); outline: none;">
+          <option value="DH-IND-0001">DH-IND-0001 - Golden Buddha</option>
+          <option value="DH-IND-0002">DH-IND-0002 - Nataraja</option>
+          <option value="DH-IND-0003">DH-IND-0003 - Horse</option>
+          <option value="DH-IND-0004">DH-IND-0004 - Rogan</option>
+          <option value="DH-IND-0005">DH-IND-0005 - Huqqa</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Top Passport Header & Identity Card -->
+    <header class="visitor-hero-card">
+      <div class="passport-seal">
+        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+      </div>
+      <div style="font-size: 0.7rem; font-family: var(--font-mono); color: var(--cyan-hud); letter-spacing: 0.08em; text-transform: uppercase;">
+        OFFICIAL DIGITAL HERITAGE PASSPORT
+      </div>
+      <h1 id="passport-title" style="font-size: 1.45rem; font-weight: 800; color: var(--text-heading); margin: 0.35rem 0 0.2rem;">
+        GOLDEN BUDDHA IN DHYANA MUDRA
+      </h1>
+      <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--antique-gold); font-weight: 700;" id="passport-id">
+        DH-IND-0001
+      </div>
+      <div style="margin-top: 0.75rem;">
+        <span class="status-pill verified" id="passport-verif-badge">
+          ● INSTITUTION-VERIFIED
+        </span>
+      </div>
+    </header>
+
+    <!-- 1. 3D & 360° VIDEO ARTIFACT EXPLORER -->
+    <section class="section-card">
+      <div class="section-title" style="display: flex; justify-content: space-between; align-items: center;">
+        <span>🏺 3D &amp; 360° OPTICAL EXPLORER</span>
+        <span class="status-pill verified" style="font-size: 0.65rem; padding: 0.15rem 0.45rem;">● HD METROLOGY</span>
+      </div>
+
+      <!-- Mode Toggle -->
+      <div class="passport-view-toggle" id="passport-view-toggle">
+        <button class="passport-toggle-btn active" id="btn-passport-view-3d">🏺 3D MESH</button>
+        <button class="passport-toggle-btn" id="btn-passport-view-video">🎬 360° SCAN VIDEO</button>
+      </div>
+
+      <div class="visitor-3d-box" id="passport-3d-container" style="position: relative;">
+        <!-- 3D Model Viewer -->
+        <model-viewer
+          id="passport-model-viewer"
+          src="/static/assets/models/buddha.glb"
+          camera-controls
+          touch-action="pan-y"
+          auto-rotate
+          rotation-per-second="15deg"
+          shadow-intensity="1.5"
+          exposure="1.0"
+          alt="3D Reconstructed Cultural Artifact"
+          style="width: 100%; height: 100%;">
+        </model-viewer>
+
+        <!-- 360° Optical Scan Video -->
+        <div id="passport-video-container" style="display: none; width: 100%; height: 100%; position: absolute; inset: 0; background: #000; align-items: center; justify-content: center;">
+          <video id="passport-scan-video" controls loop autoplay muted playsinline poster="/static/assets/videos/buddha_scan_poster.jpg" src="/static/assets/videos/buddha_scan.mp4" style="width: 100%; height: 100%; object-fit: contain;">
+            <source src="/static/assets/videos/buddha_scan.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div style="font-size: 0.72rem; color: var(--text-dim); text-align: center; margin-top: 0.4rem;" id="passport-view-instructions">
+        Touch and drag to rotate in 360° &bull; Pinch to zoom
+      </div>
+    </section>
+
+    <!-- 2. CULTURAL STORY & SIGNIFICANCE -->
+    <section class="section-card">
+      <div class="section-title">
+        <span>📜 CULTURAL STORY & SIGNIFICANCE</span>
+      </div>
+      <div style="font-size: 0.9rem; color: var(--text-main); line-height: 1.6;" id="passport-significance">
+        Depicts Gautama Buddha in supreme meditative absorption (Samadhi) in Padmasana with hands resting in Dhyana Mudra. The radiant aura (Prabhavali) and Ushnisha signify transcendent wisdom, equanimity, and inner enlightenment.
+      </div>
+      <div class="info-row" style="margin-top: 0.5rem;">
+        <div class="info-label">TRADITIONAL PRACTICE</div>
+        <div class="info-value" id="passport-use">Sacred contemplative icon for monastic meditation (Dhyana / Vipassana) and ritual consecration.</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">CRAFT TECHNIQUE</div>
+        <div class="info-value" id="passport-craft">Classical Lost-Wax Gilded Bronze Casting (Madhuchishta Vidhana) with gold leaf gilding.</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">CULTURAL ORIGIN & COMMUNITY</div>
+        <div class="info-value"><span id="passport-origin">Sarnath & Bodh Gaya, Bihar/UP</span> &bull; <span id="passport-community">Classical Monastic Guild</span></div>
+      </div>
+    </section>
+
+    <!-- 3. ORAL HISTORY & AUDIO LISTENING ROOM -->
+    <section class="section-card">
+      <div class="section-title">
+        <span>🎙️ ORAL HISTORY ARCHIVE</span>
+      </div>
+      <div class="audio-player-card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-heading);" id="passport-speaker">Mansingh Baghel (Master Artisan)</span>
+          <span class="tag-ai-assisted">VERIFIED ORAL LORE</span>
+        </div>
+        <div class="audio-controls-row">
+          <button class="play-pause-btn" id="passport-play-btn">▶</button>
+          <div class="waveform-placeholder">
+            <div class="waveform-bar" style="height: 50%;"></div>
+            <div class="waveform-bar" style="height: 80%;"></div>
+            <div class="waveform-bar" style="height: 100%;"></div>
+            <div class="waveform-bar" style="height: 60%;"></div>
+            <div class="waveform-bar" style="height: 90%;"></div>
+            <div class="waveform-bar" style="height: 40%;"></div>
+            <div class="waveform-bar" style="height: 75%;"></div>
+          </div>
+          <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-muted);" id="passport-audio-duration">00:48</span>
+        </div>
+      </div>
+
+      <div class="transcript-quote-box" id="passport-transcript">
+        "यह ध्यानस्थ बुद्ध प्रतिमा गुप्त और पाल कालीन धातुशिल्प का अनुपम शिखर है। भगवान बुद्ध पद्मासन में विराजित हैं और उनके दोनों हाथ ध्यान मुद्रा में गोदी में रखे हैं। सिर पर उष्णीष और दोनों कानों के लंबे कुंडल त्याग और परम प्रज्ञा को दर्शाते हैं।"
+      </div>
+      <div style="font-size: 0.78rem; color: var(--text-muted); font-style: italic; line-height: 1.5; padding: 0.5rem; background: var(--bg-chip); border-radius: var(--radius-sm);" id="passport-translation">
+        "This seated Buddha statue in Dhyana Mudra represents the pinnacle of classical Gupta and Pala metallurgy. Gautama Buddha is seated in Padmasana with both hands reposed in Dhyana Mudra in his lap. The cranial Ushnisha and elongated earlobes symbolize supreme renunciation and enlightened wisdom."
+      </div>
+    </section>
+
+    <!-- 4. PHYSICAL CALIPER & ARUCO DIMENSIONS -->
+    <section class="section-card">
+      <div class="section-title">
+        <span>📐 CALIBRATED DIMENSIONS</span>
+      </div>
+      <div class="dimensions-grid">
+        <div class="dimension-box">
+          <div class="dim-name">HEIGHT</div>
+          <div class="dim-val" id="p-dim-h">24.5 cm</div>
+          <span class="dim-badge scaled">SCALED</span>
+        </div>
+        <div class="dimension-box">
+          <div class="dim-name">WIDTH</div>
+          <div class="dim-val" id="p-dim-w">18.2 cm</div>
+          <span class="dim-badge scaled">SCALED</span>
+        </div>
+        <div class="dimension-box">
+          <div class="dim-name">DEPTH</div>
+          <div class="dim-val" id="p-dim-d">14.6 cm</div>
+          <span class="dim-badge scaled">SCALED</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. MULTI-ANGLE MACRO PHOTOS -->
+    <section class="section-card">
+      <div class="section-title">
+        <span>📸 DOCUMENTATION GALLERY</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.65rem;" id="passport-gallery">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- 6. GEOSPATIAL MAP (PRIVACY FILTERED) -->
+    <section class="section-card" id="passport-map-section">
+      <div class="section-title">
+        <span>🗺️ CULTURAL ORIGIN REGION</span>
+      </div>
+      <div id="passport-map" style="width: 100%; height: 220px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); overflow: hidden;"></div>
+      <div style="font-size: 0.72rem; color: var(--text-dim); text-align: center;">
+        * Displayed with community privacy boundary protocols.
+      </div>
+    </section>
+
+    <!-- 7. NATIONAL AUDIT TRAIL BADGE -->
+    <section class="section-card" style="text-align: center; border-color: var(--border-gold); background: rgba(212, 175, 55, 0.05);">
+      <div style="font-size: 0.85rem; font-weight: 700; color: var(--antique-gold);">
+        🛡️ VERIFIED NATIONAL DIGITAL HERITAGE ASSET
+      </div>
+      <p style="font-size: 0.78rem; color: var(--text-muted); margin: 0.4rem 0;">
+        This record is part of the National Cultural Preservation Registry. All photogrammetric scans, oral narratives, and structural measurements have been cryptographically linked to Heritage ID <b id="footer-id">DH-IND-0001</b>.
+      </p>
+      <div style="font-size: 0.7rem; font-family: var(--font-mono); color: var(--emerald-green);">
+        STATUS: RATIFIED &bull; NATIONAL REGISTER #NR-8841
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Visitor Page Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const artifactId = urlParams.get('id') || 'DH-IND-0001';
+
+      try {
+        const res = await fetch(`/api/artifacts/${artifactId}`);
+        if (!res.ok) throw new Error("Artifact not found");
+        const art = await res.json();
+        renderVisitorPassport(art);
+      } catch (err) {
+        console.error(err);
+      }
+    });
+
+    let visitorAudio = new Audio();
+    let isPlaying = false;
+
+    function renderVisitorPassport(art) {
+      document.getElementById('passport-title').textContent = art.name;
+      document.getElementById('passport-id').textContent = art.id;
+      document.getElementById('footer-id').textContent = art.id;
+      document.getElementById('passport-verif-badge').textContent = `● ${art.verification_status || 'COMMUNITY-PROVIDED'}`;
+
+      const switcher = document.getElementById('passport-artifact-switcher');
+      if (switcher) switcher.value = art.id;
+
+      // 3D Viewer & 360 Scan Video
+      const mv = document.getElementById('passport-model-viewer');
+      if (mv && art['3d_model_url']) {
+        mv.src = art['3d_model_url'];
+      }
+
+      const videoEl = document.getElementById('passport-scan-video');
+      const videoContainer = document.getElementById('passport-video-container');
+      const viewToggle = document.getElementById('passport-view-toggle');
+      const btn3D = document.getElementById('btn-passport-view-3d');
+      const btnVideo = document.getElementById('btn-passport-view-video');
+      const instructions = document.getElementById('passport-view-instructions');
+
+      const isBuddha = art.id === 'DH-IND-0001';
+      const videoUrl = art.scan_video_url || (isBuddha ? '/static/assets/videos/buddha_scan.mp4' : null);
+      const posterUrl = art.scan_video_poster || (isBuddha ? '/static/assets/videos/buddha_scan_poster.jpg' : null);
+
+      if (videoUrl && videoEl) {
+        videoEl.src = videoUrl;
+        if (posterUrl) videoEl.poster = posterUrl;
+        if (viewToggle) viewToggle.style.display = 'flex';
+      } else {
+        if (viewToggle) viewToggle.style.display = 'none';
+      }
+
+      btn3D?.addEventListener('click', () => {
+        btn3D.classList.add('active');
+        btnVideo?.classList.remove('active');
+        if (mv) mv.style.display = 'block';
+        if (videoContainer) videoContainer.style.display = 'none';
+        if (instructions) instructions.textContent = 'Touch and drag to rotate in 360° • Pinch to zoom';
+      });
+
+      btnVideo?.addEventListener('click', () => {
+        btnVideo.classList.add('active');
+        btn3D?.classList.remove('active');
+        if (mv) mv.style.display = 'none';
+        if (videoContainer) {
+          videoContainer.style.display = 'flex';
+          videoEl?.play().catch(e => console.log(e));
+        }
+        if (instructions) instructions.textContent = 'Original 360° optical photogrammetric turntable capture';
+      });
+
+      // Cultural Text
+      document.getElementById('passport-significance').textContent = art.cultural_significance || '';
+      document.getElementById('passport-use').textContent = art.traditional_use || '';
+      document.getElementById('passport-craft').textContent = art.craft_technique || '';
+      document.getElementById('passport-origin').textContent = art.region || '';
+      document.getElementById('passport-community').textContent = art.community || '';
+
+      // Oral Lore
+      const ok = art.oral_knowledge || {};
+      document.getElementById('passport-speaker').textContent = ok.speaker || 'Knowledge Bearer';
+      document.getElementById('passport-transcript').textContent = ok.transcript || '';
+      document.getElementById('passport-translation').textContent = ok.translation || '';
+      document.getElementById('passport-audio-duration').textContent = ok.duration || '00:48';
+
+      const playBtn = document.getElementById('passport-play-btn');
+      if (playBtn && ok.audio_url) {
+        playBtn.addEventListener('click', () => {
+          if (isPlaying) {
+            visitorAudio.pause();
+            isPlaying = false;
+            playBtn.innerHTML = '▶';
+          } else {
+            visitorAudio.src = ok.audio_url;
+            visitorAudio.play();
+            isPlaying = true;
+            playBtn.innerHTML = '❚❚';
+          }
+        });
+        visitorAudio.onended = () => {
+          isPlaying = false;
+          playBtn.innerHTML = '▶';
+        };
+      }
+
+      // Dimensions
+      const d = art.dimensions || {};
+      document.getElementById('p-dim-h').textContent = d.height ? `${d.height} cm` : 'N/A';
+      document.getElementById('p-dim-w').textContent = d.width ? `${d.width} cm` : 'N/A';
+      document.getElementById('p-dim-d').textContent = d.depth ? `${d.depth} cm` : 'N/A';
+
+      // Photos
+      const galleryEl = document.getElementById('passport-gallery');
+      if (galleryEl && art.photo_gallery) {
+        galleryEl.innerHTML = '';
+        art.photo_gallery.slice(0, 4).forEach(photo => {
+          const div = document.createElement('div');
+          div.className = 'gallery-thumbnail-card';
+          div.innerHTML = `<img src="${photo.url}" alt="${photo.label}"><div class="gallery-label">${photo.label}</div>`;
+          galleryEl.appendChild(div);
+        });
+      }
+
+      // Privacy-Filtered Map
+      const mapSec = document.getElementById('passport-map-section');
+      const privacy = art.map_data?.location_privacy || 'PUBLIC';
+
+      if (privacy === 'PRIVATE') {
+        mapSec.style.display = 'none'; // Hide map completely for sensitive heritage!
+      } else {
+        initVisitorMap(art, privacy);
+      }
+    }
+
+    function initVisitorMap(art, privacy) {
+      if (typeof L === 'undefined') return;
+
+      const mapData = art.map_data || {};
+      const origin = mapData.cultural_origin;
+      if (!origin) return;
+
+      const pMap = L.map('passport-map', {
+        center: [origin.lat, origin.lng],
+        zoom: privacy === 'RESTRICTED' ? 6 : 8,
+        zoomControl: false,
+        attributionControl: false
+      });
+
+      const isDark = (document.documentElement.getAttribute('data-theme') || 'light') === 'dark';
+      const tileUrl = isDark
+        ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+        : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
+
+      L.tileLayer(tileUrl, {
+        maxZoom: 18,
+        subdomains: 'abcd'
+      }).addTo(pMap);
+
+      const lat = privacy === 'RESTRICTED' ? origin.lat + 0.1 : origin.lat;
+      const lng = privacy === 'RESTRICTED' ? origin.lng + 0.1 : origin.lng;
+
+      L.circleMarker([lat, lng], {
+        radius: privacy === 'RESTRICTED' ? 24 : 10,
+        fillColor: '#FF7B00',
+        color: '#FFFFFF',
+        weight: 2,
+        fillOpacity: privacy === 'RESTRICTED' ? 0.35 : 0.85
+      }).bindPopup(`<b>${privacy === 'RESTRICTED' ? 'Approximate Region: ' + origin.state : origin.name}</b>`).addTo(pMap);
+    }
+  </script>
+</body>
+</html>

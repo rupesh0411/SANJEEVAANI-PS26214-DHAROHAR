@@ -1,0 +1,179 @@
+{
+  "id": "DH-IND-0004",
+  "name": "KUTCH ROGAN PAINTED TEXTILE",
+  "artifact_type": "Heritage Fabric Art",
+  "material": "Tussar Silk with Castor Oil & Natural Mineral Pigments",
+  "craft_technique": "Freehand trailing of thick castor paste via metal stylus onto folded textile",
+  "region": "Gujarat",
+  "community": "Khatri Muslim Artisan Guild",
+  "approximate_period": "Early 21st Century / 400-Year Guild Tradition",
+  "traditional_use": "Bridal ghaghras, ceremonial wall hangings (pari-karan), and auspicious gift drapes for royal and pastoral Maldhari families.",
+  "cultural_significance": "One of India's rarest endangered crafts, preserved by a single artisan family in Nirona village using castor oil boiled for 48 hours to create elastic paint.",
+  "associated_practice": "Rogan mirror-symmetry folding technique and bridal trousseau preparation.",
+  "documentation_date": "2026-09-20",
+  "contributor": "Rizwan Khatri, Master Rogan Artist, Nirona",
+  "scan_status": "COMPLETED",
+  "3d_status": "PROCESSING",
+  "3d_model_url": null,
+  "thumbnail_url": "/static/assets/images/view_front.jpg",
+  "verification_status": "SOURCE-VERIFIED",
+  "verification_badge": "SOURCE-VERIFIED",
+  "verification_level": 3,
+  "scale_reference": "DETECTED",
+  "scale_marker_id": 42,
+  "scale_status": "ESTIMATED",
+  "dimensions": {
+    "height": 45.0,
+    "width": 30.0,
+    "depth": 0.4,
+    "unit": "cm",
+    "scale_mode": "ESTIMATED",
+    "bounding_box": {
+      "x": 30.0,
+      "y": 45.0,
+      "z": 0.4
+    },
+    "surface_area": "1350.0 cm²",
+    "volume": "NOT AVAILABLE",
+    "scanned_height": 45.0,
+    "caliper_height": 44.8,
+    "validation_status": "PENDING",
+    "validation_notes": "Textile planar depth below laser scanner tolerance; measured by optical rule."
+  },
+  "structure_3d": {
+    "mesh_status": "PROCESSING (SfM dense cloud generated)",
+    "texture_status": "TEXTURE_MAPPING_IN_PROGRESS",
+    "polygon_count": "PROCESSING",
+    "vertex_count": "PROCESSING",
+    "point_cloud_status": "14,200 FEATURES EXTRACTED",
+    "texture_resolution": "NOT AVAILABLE",
+    "reconstruction_pipeline": "Texture planar SfM reconstruction in queue"
+  },
+  "object_characteristics": {
+    "material": {
+      "value": "Boiled Castor Oil Resin, Mineral Pigments on Handwoven Silk",
+      "source": "Human-entered",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "dominant_colour": {
+      "value": "Vermilion, Saffron, Ultramarine on Indigo Base",
+      "source": "AI-suggested",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "surface_appearance": {
+      "value": "Raised tactile thread-like paint relief",
+      "source": "Human-entered",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "texture": {
+      "value": "Embossed rubbery filigree adhered to fabric weave",
+      "source": "Human-entered",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "shape": {
+      "value": "Rectangular wall hanging with central Tree of Life motif",
+      "source": "Human-entered",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "approximate_period": {
+      "value": "Contemporary Masterwork (400-Year Heritage)",
+      "source": "Human-entered",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "condition": {
+      "value": "Excellent; pigment flexibility fully intact",
+      "source": "Human-entered",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "craft_technique": {
+      "value": "Freehand stylus trailing with palm body-heat softening",
+      "source": "Human-entered",
+      "verified": "SOURCE-VERIFIED"
+    }
+  },
+  "condition_notes": {
+    "cracks": "None; castor resin matrix retains pliable elastomeric properties.",
+    "breakage": "None.",
+    "surface_damage": "None.",
+    "discoloration": "None; natural mineral oxides are light-fast.",
+    "missing_parts": "None.",
+    "wear": "None; kept in archival conservation envelope.",
+    "restoration": "None."
+  },
+  "photo_gallery": [
+    {
+      "label": "Full Planar Front",
+      "url": "/static/assets/images/view_front.jpg",
+      "angle": 0,
+      "type": "PRIMARY"
+    },
+    {
+      "label": "Stylus Detail Macro",
+      "url": "/static/assets/images/detail_filigree.jpg",
+      "angle": 0,
+      "type": "MACRO"
+    }
+  ],
+  "oral_knowledge": {
+    "audio_url": "/static/assets/audio/dh_ind_0001_oral_lore.wav",
+    "duration": "00:45",
+    "speaker": "Rizwan Khatri",
+    "speaker_role": "State Awardee Rogan Artisan",
+    "language": "Gujarati / Kutchi",
+    "status": "Source-verified by Gujarat Handicrafts Council",
+    "status_label": "SOURCE-VERIFIED",
+    "transcript": "રોગન કળામાં એરંડીના તેલને બે દિવસ ઉકાળીને જે લુગદી બને છે, તેને હથેળીમાં ગરમ કરીને સળી વડે કાપડ પર દોરો ખેંચવામાં આવે છે. આખી દુનિયામાં માત્ર અમારા નિરોણા ગામમાં આ કળા જીવંત છે.",
+    "translation": "In Rogan art, castor oil is boiled for two days into a dense paste. Master artisans warm it on the palm and draw fine thread-like paint filaments using a metal stylus without touching the fabric. This rare heritage survives exclusively in our Nirona village."
+  },
+  "map_data": {
+    "cultural_origin": {
+      "name": "Nirona Village, Kutch, Gujarat",
+      "lat": 23.3855,
+      "lng": 69.5891,
+      "state": "Gujarat",
+      "details": "The sole surviving global center of freehand Rogan textile art."
+    },
+    "community_region": {
+      "name": "Banni & Pachham Pastoral Plains",
+      "lat": 23.65,
+      "lng": 69.45,
+      "state": "Gujarat",
+      "details": "Maldhari pastoralist cultural exchange network."
+    },
+    "documentation_location": {
+      "name": "Nirona Artisan Field Studio",
+      "lat": 23.386,
+      "lng": 69.5902,
+      "state": "Gujarat",
+      "details": "Station 04 Mobile Scanning Unit."
+    },
+    "current_display": {
+      "name": "Calico Museum of Textiles, Ahmedabad",
+      "lat": 23.056,
+      "lng": 72.5934,
+      "state": "Gujarat",
+      "details": "Special Indian Folk Textile Exhibition."
+    },
+    "location_privacy": "RESTRICTED"
+  },
+  "provenance": [
+    {
+      "step": "ARTIFACT CREATED",
+      "date": "2024",
+      "actor": "Rizwan Khatri Family Atelier",
+      "action": "Completed 120-hour freehand Tree of Life composition.",
+      "source": "Atelier Registration Book #RK-2024",
+      "status": "SOURCE-VERIFIED"
+    },
+    {
+      "step": "DOCUMENTED",
+      "date": "2026-09-20",
+      "actor": "Gujarat Cultural Survey",
+      "action": "Multispectral scanning and artisan interview.",
+      "source": "Record #GJ-KUTCH-08",
+      "status": "SOURCE-VERIFIED"
+    }
+  ],
+  "passport_url": "/passport.html?id=DH-IND-0004",
+  "updated_at": "2026-09-30T12:34:26.163574"
+}

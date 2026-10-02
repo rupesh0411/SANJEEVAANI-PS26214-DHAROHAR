@@ -1,0 +1,199 @@
+{
+  "id": "DH-IND-0002",
+  "name": "CHOLA BRONZE NATARAJA",
+  "artifact_type": "Sacred Bronze Sculpture",
+  "material": "Panchaloha (Five-Metal Sacred Alloy)",
+  "craft_technique": "Cire Perdue (Lost-Wax) Agamic Lost-Wax Casting",
+  "region": "Tamil Nadu",
+  "community": "Swamimalai Sthapathi Guild",
+  "approximate_period": "11th Century CE (Imperial Chola Dynasty)",
+  "traditional_use": "Utsava Murti (processional bronze icon) consecrated for temple festivities, embodying Shiva's cosmic dance of creation and dissolution.",
+  "cultural_significance": "Pinnacle of medieval South Indian metallurgical and theological art; captures anandatandava within the halo of cosmic fire (Tiruvasi).",
+  "associated_practice": "Arudra Darisanam abhishekam rites and temple chariot processions.",
+  "documentation_date": "2026-09-10",
+  "contributor": "K. Devasenapathy Sthapathi, Swamimalai",
+  "scan_status": "COMPLETED",
+  "3d_status": "COMPLETED",
+  "3d_model_url": "/static/assets/models/nataraja.glb",
+  "thumbnail_url": "/static/assets/images/view_front.jpg",
+  "verification_status": "INSTITUTION-VERIFIED",
+  "verification_badge": "INSTITUTION-VERIFIED",
+  "verification_level": 4,
+  "scale_reference": "DETECTED",
+  "scale_marker_id": 42,
+  "scale_status": "SCALED",
+  "dimensions": {
+    "height": 22.0,
+    "width": 18.0,
+    "depth": 7.5,
+    "unit": "cm",
+    "scale_mode": "SCALED",
+    "bounding_box": {
+      "x": 18.0,
+      "y": 22.0,
+      "z": 7.5
+    },
+    "surface_area": "412.0 cm²",
+    "volume": "320.5 cm³",
+    "scanned_height": 22.0,
+    "caliper_height": 21.9,
+    "validation_status": "VALIDATED",
+    "validation_notes": "Iconometric proportions adhere to classic Tala canonical ratios."
+  },
+  "structure_3d": {
+    "mesh_status": "WATERTIGHT",
+    "texture_status": "PATINATED_BRONZE",
+    "polygon_count": 1384,
+    "vertex_count": 740,
+    "point_cloud_status": "36,400 DENSE POINTS RESOLVED",
+    "texture_resolution": "2048 x 2048 px",
+    "reconstruction_pipeline": "Photogrammetric Multi-View Stereo + Poisson Surface Reconstructor"
+  },
+  "object_characteristics": {
+    "material": {
+      "value": "Panchaloha (Copper, Brass, Zinc, Gold, Silver traces)",
+      "source": "Human-entered",
+      "verified": "INSTITUTION-VERIFIED"
+    },
+    "dominant_colour": {
+      "value": "Dark Verdigris Bronze Patina",
+      "source": "AI-suggested",
+      "verified": "INSTITUTION-VERIFIED"
+    },
+    "surface_appearance": {
+      "value": "Chiseled detail, smoothened by centuries of ritual unguents",
+      "source": "Human-entered",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "texture": {
+      "value": "Fine metallic relief with crisp iconometric contours",
+      "source": "Human-entered",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "shape": {
+      "value": "Aureole ring enclosing quadrupedal deity poised on dwarf Apasmara",
+      "source": "AI-suggested",
+      "verified": "SOURCE-VERIFIED"
+    },
+    "approximate_period": {
+      "value": "Imperial Chola (11th Century CE)",
+      "source": "Human-entered",
+      "verified": "INSTITUTION-VERIFIED"
+    },
+    "condition": {
+      "value": "Pristine, stable copper carbonate oxidation patina",
+      "source": "Human-entered",
+      "verified": "INSTITUTION-VERIFIED"
+    },
+    "craft_technique": {
+      "value": "Lost-wax solid cast according to Shilpa Shastras",
+      "source": "Human-entered",
+      "verified": "INSTITUTION-VERIFIED"
+    }
+  },
+  "condition_notes": {
+    "cracks": "None.",
+    "breakage": "None; aureole prabha flames fully preserved.",
+    "surface_damage": "Stable historical ceremonial patina.",
+    "discoloration": "Typical cuprite dark olive hue.",
+    "missing_parts": "None.",
+    "wear": "Softening of finger mudra edges due to centuries of ritual touching.",
+    "restoration": "Protected with microcrystalline wax coating by museum conservator."
+  },
+  "photo_gallery": [
+    {
+      "label": "Iconic Front Pose",
+      "url": "/static/assets/images/view_front.jpg",
+      "angle": 0,
+      "type": "PRIMARY"
+    },
+    {
+      "label": "Profile Left (Aureole)",
+      "url": "/static/assets/images/view_left.jpg",
+      "angle": 90,
+      "type": "ORTHOGONAL"
+    },
+    {
+      "label": "Rear View (Jatamakuta)",
+      "url": "/static/assets/images/view_back.jpg",
+      "angle": 180,
+      "type": "ORTHOGONAL"
+    },
+    {
+      "label": "Right View",
+      "url": "/static/assets/images/view_right.jpg",
+      "angle": 270,
+      "type": "ORTHOGONAL"
+    }
+  ],
+  "oral_knowledge": {
+    "audio_url": "/static/assets/audio/dh_ind_0002_oral_lore.wav",
+    "duration": "00:52",
+    "speaker": "K. Devasenapathy Sthapathi",
+    "speaker_role": "23rd Generation Master Sculptor, Swamimalai",
+    "language": "Tamil / Classical Sanskrit shlokas",
+    "status": "Human reviewed by Tamil University Epigraphy Dept",
+    "status_label": "HUMAN REVIEWED",
+    "transcript": "இந்த நடராஜர் சிலை எங்கள் சோழ தேசத்து ஸ்தபதிகளின் தலைசிறந்த படைப்பு. இதில் உள்ள ஒவ்வொரு அளவும் அஷ்டதாள கணிதத்தின்படி மெழுகில் வடிக்கப்பட்டு பஞ்சலோகத்தில் வார்க்கப்பட்டது.",
+    "translation": "This Nataraja icon is the crowning achievement of Chola master sthapathis. Every divine proportion was first calculated according to Ashtatala canon, carved in pure bee-dammar wax, and cast in solid Panchaloha alloy."
+  },
+  "map_data": {
+    "cultural_origin": {
+      "name": "Thanjavur, Tamil Nadu",
+      "lat": 10.787,
+      "lng": 79.1378,
+      "state": "Tamil Nadu",
+      "details": "Chola Royal Capital & Brihadisvara Temple precinct."
+    },
+    "community_region": {
+      "name": "Swamimalai Artisan Quarter",
+      "lat": 10.9575,
+      "lng": 79.3278,
+      "state": "Tamil Nadu",
+      "details": "UNESCO-recognized living lineage of bronze metalcasters."
+    },
+    "documentation_location": {
+      "name": "Tamil University Epigraphy Lab, Thanjavur",
+      "lat": 10.7423,
+      "lng": 79.1124,
+      "state": "Tamil Nadu",
+      "details": "Field Documentation Station #03."
+    },
+    "current_display": {
+      "name": "Government Museum Bronze Gallery, Egmore, Chennai",
+      "lat": 13.0732,
+      "lng": 80.2609,
+      "state": "Tamil Nadu",
+      "details": "Gallery Room 2, Chola Masterpieces Showcase."
+    },
+    "location_privacy": "PUBLIC"
+  },
+  "provenance": [
+    {
+      "step": "ARTIFACT CREATED",
+      "date": "c. 1040 CE",
+      "actor": "Chola Royal Atelier",
+      "action": "Consecrated under Rajendra Chola I.",
+      "source": "Epigraphical inscription records",
+      "status": "INSTITUTION-VERIFIED"
+    },
+    {
+      "step": "DOCUMENTED",
+      "date": "2026-09-08",
+      "actor": "State Heritage Mission",
+      "action": "Field cataloging and high-resolution scanning.",
+      "source": "Record Docket #TN-BR-104",
+      "status": "INSTITUTION-VERIFIED"
+    },
+    {
+      "step": "PUBLISHED",
+      "date": "2026-09-20",
+      "actor": "Digital Heritage Registry",
+      "action": "Published to public passport network.",
+      "source": "Passport DH-IND-0002",
+      "status": "INSTITUTION-VERIFIED"
+    }
+  ],
+  "passport_url": "/passport.html?id=DH-IND-0002",
+  "updated_at": "2026-09-30T12:34:26.160576"
+}
