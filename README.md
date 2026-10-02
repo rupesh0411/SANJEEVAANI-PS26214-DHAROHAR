@@ -99,7 +99,7 @@ flowchart TD
     classDef endnode fill:#eef2ff,stroke:#4f46e5,stroke-width:2px,color:#3730a3;
 
     %% Entry
-    START([START: Physical Artifact])
+    START(["START: Physical Artifact"])
 
     %% Main Process Flow
     subgraph PIPELINE ["DHAROHAR METROLOGY & PRESERVATION PIPELINE"]
@@ -161,8 +161,8 @@ flowchart TD
     START --> S1
     S1 --> S2
     S2 --> S3
-    S3 -- "Pass: Valid Telemetry" --> S4
-    S3 -- "Fail: Invalid / Blurry" -->|Feedback: Automated Recapture| S2
+    S3 -->|Pass: Valid Telemetry| S4
+    S3 -->|Fail: Invalid or Blurry - Automated Recapture| S2
     S4 --> S5
     S4 --> S6
     S5 --> S7
@@ -534,24 +534,28 @@ For Smart India Hackathon jury evaluation:
 ### Impact Across Stakeholder Groups
 
 ```mermaid
-mindmap
-  root((DHAROHAR IMPACT))
-    Museums & Institutions
-      Digital records & permanent preservation
-      Interactive 3D visitor kiosks & passports
-      Reduced handling of fragile artifacts
-    Artisans & Guilds
-      Preservation of dying tribal crafts
-      Attributed audio oral lore recording
-      Direct community verification control
-    Students & Researchers
-      Millimeter-accurate 3D models & dimensions
-      Open CIDOC-CRM heritage metadata
-      Cross-institution comparative study
-    Public & Visitors
-      Frictionless QR-code mobile exploration
-      360-degree rotation & interactive calipers
-      Authentic vernacular oral history playback
+flowchart TD
+    ROOT(["🏛️ DHAROHAR PRESERVATION IMPACT"])
+    
+    ROOT --> M["🏛️ Museums & Institutions"]
+    M --> M1["Digital records & permanent preservation"]
+    M --> M2["Interactive 3D visitor kiosks & passports"]
+    M --> M3["Reduced handling of fragile artifacts"]
+
+    ROOT --> A["🎨 Artisans & Guilds"]
+    A --> A1["Preservation of dying tribal crafts"]
+    A --> A2["Attributed audio oral lore recording"]
+    A --> A3["Direct community verification control"]
+
+    ROOT --> S["🔬 Students & Researchers"]
+    S --> S1["Millimeter-accurate 3D models & dimensions"]
+    S --> S2["Open CIDOC-CRM heritage metadata"]
+    S --> S3["Cross-institution comparative study"]
+
+    ROOT --> P["👥 Public & Visitors"]
+    P --> P1["Frictionless QR-code mobile exploration"]
+    P --> P2["360-degree rotation & interactive calipers"]
+    P --> P3["Authentic vernacular oral history playback"]
 ```
 
 ### Comprehensive Benefits Matrix
