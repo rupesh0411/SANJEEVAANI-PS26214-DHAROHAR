@@ -1,9 +1,40 @@
 # SANJEEVAANI DHAROHAR
 ### Digital Heritage Artifact Recording, Oral History & Authenticated Records
-**Smart India Hackathon (SIH) 2026 — Problem Statement: PS 26214**
+**Smart India Hackathon (SIH) 2026 — Problem Statement: 26214 | Theme: Heritage & Culture**
+
+[![SIH 2026](https://img.shields.io/badge/SIH-2026-orange.svg?style=for-the-badge&logo=target)](https://www.sih.gov.in/)
+[![Problem Statement ID](https://img.shields.io/badge/Problem%20Statement-26214-0284c7.svg?style=for-the-badge)](https://www.sih.gov.in/)
+[![Theme](https://img.shields.io/badge/Theme-Heritage%20%26%20Culture-16a34a.svg?style=for-the-badge)](#problem-statement-details)
+[![Category](https://img.shields.io/badge/Category-Hardware-7c3aed.svg?style=for-the-badge)](#problem-statement-details)
+[![Team ID](https://img.shields.io/badge/Team%20ID-169546-ea580c.svg?style=for-the-badge)](#team-details)
+[![Team Name](https://img.shields.io/badge/Team-Sanjeevaani-b45309.svg?style=for-the-badge)](#team-details)
+[![Status](https://img.shields.io/badge/Status-Operational%20Prototype-22c55e.svg?style=for-the-badge)](#9-setup--installation-guide)
 
 > **"Preserve the artefact. Preserve the knowledge. Preserve it for the future."**  
 > *A portable, offline-first cyber-archaeology metrology and cultural preservation system — capturing calibrated 3D photogrammetric models, living artisan oral lore, progressive verification provenance, and tamper-evident Digital Heritage Passports over a localized Raspberry Pi hotspot.*
+
+---
+
+## 📌 Table of Contents
+
+- [1. Project Overview](#1-project-overview)
+- [2. Problem Statement (SIH 2026 PS 26214)](#2-problem-statement-sih-2026-ps-26214)
+- [3. Proposed Solution Architecture](#3-proposed-solution-architecture)
+- [4. System Architecture Diagrams](#4-system-architecture-diagrams)
+- [5. Current Prototype Capabilities](#5-current-prototype-capabilities)
+- [6. Technology Stack & Implementation Matrix](#6-technology-stack--implementation-matrix)
+- [7. Implementation Status](#7-implementation-status)
+- [8. Repository Structure](#8-repository-structure)
+- [9. Setup & Installation Guide](#9-setup--installation-guide)
+- [10. Hardware Wiring & Calibration Setup](#10-hardware-wiring--calibration-setup)
+- [11. Testing & Validation](#11-testing--validation)
+- [12. SIH Demonstration Walkthrough](#12-sih-demonstration-walkthrough)
+- [13. Current Limitations](#13-current-limitations)
+- [14. Feasibility, Risks & Mitigation Strategies (Slide 4)](#14-feasibility-risks--mitigation-strategies-slide-4)
+- [15. Impact, Key Benefits & Long-Term Value (Slide 5)](#15-impact-key-benefits--long-term-value-slide-5)
+- [16. Research Basis & Prior Art Gap (Slide 6)](#16-research-basis--prior-art-gap-slide-6)
+- [17. Standards, Safety & CIDOC-CRM Alignment](#17-standards-safety--cidoc-crm-alignment)
+- [18. Team Information & Hackathon Metadata](#team-details)
 
 ---
 
@@ -19,10 +50,26 @@ The system architecture is engineered for multi-site field expansion—integrati
 
 ## 2. Problem Statement (SIH 2026 PS 26214)
 
-* **Domain**: Heritage & Culture / Cyber-Archaeology & Museum Metrology
-* **PS Category**: Hardware
-* **Target Artifacts**: Sacred bronzes, folk terracotta, metalcraft (Dhokra/Bidriware), wooden votives, and tribal textiles
-* **Field Challenges**: Specular glare on brass/bronze, remote sites with zero internet connectivity, fragility of unbaked clay/patina, risk of physical handling, unverified or undocumented oral lore
+<a id="problem-statement-details"></a>
+
+| Parameter | Specification Details |
+| :--- | :--- |
+| **Problem Statement ID** | **26214** |
+| **Problem Statement Title** | **Student Innovation-Ideas that showcase the rich cultural heritage and traditions of India.** |
+| **Theme** | **Heritage & Culture** |
+| **PS Category** | **Hardware** |
+| **Team ID** | **169546** |
+| **Team Name** | **Sanjeevaani** |
+| **System Code-Name** | **DHAROHAR (Digital Heritage Artifact Recording, Oral History & Authenticated Records)** |
+| **Domain** | **Heritage & Culture / Cyber-Archaeology & Museum Metrology** |
+| **Target Artifacts** | **Sacred bronzes, folk terracotta, metalcraft (Dhokra/Bidriware), wooden votives, and tribal textiles** |
+
+### Field Challenges Addressed
+* **Specular Glare on Brass & Bronze**: Reflections distort photogrammetric keypoint triangulation; resolved via cross-polarized 5500K LED illumination.
+* **Remote Geographies & Zero Connectivity**: Sacred shrines and tribal craft clusters lack cellular network or cloud access; resolved via offline Raspberry Pi 5 hotspot & local NVMe SSD vault.
+* **Fragility of Antiquities**: Unbaked terracotta, decayed patinas, and sacred relics cannot withstand repeated physical calipers or transport; resolved via contactless turntable scanning.
+* **Loss of Living Intangible Oral Lore**: Traditional digitization divorces physical shape from master artisan genealogies and sacred chants; resolved via integrated bilingual oral lore and synchronized transcriptions.
+* **Verification & Provenance Trust**: Risk of hallucinated or unverified metadata in public records; resolved via a four-stage progressive verification audit trail (`HUMAN-ENTERED` vs `AI-SUGGESTED`).
 * **Core Requirement**: A portable, reliable, non-contact scanning box and verification-aware documentation workflow capable of digitizing physical form and intangible cultural knowledge without requiring cloud infrastructure.
 
 ---
@@ -604,18 +651,23 @@ DHAROHAR conforms to international museum informatics and digital preservation s
 
 ---
 
-## 📜 License & Credits
+## <a id="team-details"></a>18. Team Information & Hackathon Metadata
 
-* **Event**: Smart India Hackathon (SIH) 2026
-* **Problem Statement ID**: 26214
-* **Problem Statement Title**: Student Innovation - Ideas that showcase the rich cultural heritage and traditions of India
-* **Theme**: Heritage & Culture &bull; **PS Category**: Hardware
-* **Team ID**: `169546` &bull; **Team Name**: `Sanjeevaani`
-* **Repository**: [https://github.com/rupesh0411/SANJEEVAANI-PS26214-DHAROHAR](https://github.com/rupesh0411/SANJEEVAANI-PS26214-DHAROHAR)
+| Parameter | Value |
+| :--- | :--- |
+| **Event** | **Smart India Hackathon (SIH) 2026** |
+| **Problem Statement ID** | **26214** |
+| **Problem Statement Title** | **Student Innovation-Ideas that showcase the rich cultural heritage and traditions of India.** |
+| **Theme** | **Heritage & Culture** |
+| **PS Category** | **Hardware** |
+| **Team ID** | **169546** |
+| **Team Name** | **Sanjeevaani** |
+| **Repository** | [https://github.com/rupesh0411/SANJEEVAANI-PS26214-DHAROHAR](https://github.com/rupesh0411/SANJEEVAANI-PS26214-DHAROHAR) |
 
 <div align="center">
 
-**SANJEEVAANI DHAROHAR &bull; Smart India Hackathon 2026**  
+**SANJEEVAANI DHAROHAR • Smart India Hackathon 2026**  
 *“Preserve the artefact. Preserve the knowledge. Preserve it for the future.”*
 
 </div>
+

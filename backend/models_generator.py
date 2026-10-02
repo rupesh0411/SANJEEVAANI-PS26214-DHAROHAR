@@ -738,5 +738,6 @@ def generate_all_models(output_dir):
     return models_meta
 
 if __name__ == "__main__":
-    generate_all_models("d:/PS26214/static/assets/models")
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    generate_all_models(os.path.join(base_dir, "static", "assets", "models"))
 

@@ -91,4 +91,5 @@ def generate_geojson(outpath):
     print(f"[OK] Generated offline India GeoJSON dataset: {outpath}")
 
 if __name__ == "__main__":
-    generate_geojson("d:/PS26214/static/assets/geojson/india_states.json")
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    generate_geojson(os.path.join(base_dir, "static", "assets", "geojson", "india_states.json"))

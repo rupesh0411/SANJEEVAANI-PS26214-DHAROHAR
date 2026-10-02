@@ -167,4 +167,5 @@ def generate_all_sample_frames(output_dir):
     print(f"[OK] Generated 36 scan frames + 7 gallery documentation photos in {output_dir}")
 
 if __name__ == "__main__":
-    generate_all_sample_frames("d:/PS26214/static/assets/images")
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    generate_all_sample_frames(os.path.join(base_dir, "static", "assets", "images"))
